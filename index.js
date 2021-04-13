@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const PORT = 4000;
 const cors = require('cors');
 const axios = require('axios');
-const util = require('minecraft-server-util');
+const mc = require('minecraft-protocol');
 
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -28,13 +28,13 @@ app.get('/beammp', (req, res) => {
 
 // Basic route to display MC server info
 app.get('/mc', (req, res) => {
-    util.status('mc.meetandgeek.ca')
-    .then((response) => {
-        res.send(response);
-    })
-    .catch((error) => {
-        console.log(error);
-    });
+    mc.ping('mc.meetandgeek.ca')
+        .then((result) => {
+            res.send(result);
+        })
+        .catch((error) => {
+            console.error(error);
+        });
 });
 
 app.listen(PORT, function(){
