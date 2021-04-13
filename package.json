@@ -1,0 +1,23 @@
+{
+  "name": "brain-games-api",
+  "version": "1.0.0",
+  "description": "The backend server for the Brain Games website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "jslightham",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "minecraft-server-util": "^3.4.2",
+    "mongoose": "^5.11.17",
+    "nodemailer": "^6.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
