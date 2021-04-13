@@ -28,7 +28,7 @@ app.get('/beammp', (req, res) => {
 
 // Basic route to display MC server info
 app.get('/mc', (req, res) => {
-    mc.ping('mc.meetandgeek.ca')
+    mc.ping({host: 'mc.meetandgeek.ca'})
         .then((result) => {
             res.send(result);
         })
